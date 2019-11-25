@@ -1,46 +1,42 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <body onload="draw()">
-      <canvas id="sketch" width="300" height="300">
-      </canvas>
+<html>
+<head>
+	<title></title>
+</head>
+<body onload="draw()">
 
-    <script>
-      function draw() {
-        var sketch = document.getElementById('sketch');
-        var context = sketch.getContext("2d");
-        var context2 = sketch.getContext("2d");
-        var context3= sketch.getContext("2d");
-        var context4 = sketch.getContext("2d");
-        var context5= sketch.getContext("2d");
-        var context6 = sketch.getContext("2d");
-        var context7= sketch.getContext("2d");
-        var context8 = sketch.getContext("2d");
-        var context9= sketch.getContext("2d");
-        var context0 = sketch.getContext("2d");
+	<canvas id="sketch" width="300" height="300">
+		<!-- made a wider canvas for more user-defined cycles of the for loop
+		-->
+	</canvas>
 
+	<script>
+		function draw() {
+		 	var sketch = document.getElementById('sketch');
+			var context = sketch.getContext("2d");
+				// DRAW STUFF HERE!
+			var userstring = prompt("How many pairs should I draw?");
+			var usernum = parseInt(userstring);
+			var thismany = usernum * 2 - 1;
+			for (i = 0; i <= thismany; i++) {
+				if (i % 2 == 0) {
+					// % 2 == 0 ensures that I have an EVEN number!
+				 	context.fillStyle = "#00ff00";	// red things
+					context.fillRect((i * 25), 20, 20, 20);
+				} else {
+					// for all ODD number values of i
+				 	context.fillStyle = "#0000ff";	// blue things
+					context.beginPath();
+					context.arc((i * 25 + 10), 30, 10, 0, 2 * Math.PI, true);
+						// radius is 10 to match height of squares (20)
+						// i * 25 + 10 ensures an OFFSET of 10 px so that
+						// circles are constantly NEXT TO the squares
+					context.closePath();
+					context.fill();
+				}
+			}
+		}
+	</script>
 
-
-
-
-
-
-
-var num = prompt("Give me a number: ");
-for
-        context.fillStyle = "#00ff00";
-        context.fillRect(0, 150, 100, 100);
-        context.beginPath();
-        context2.fillStyle = "#0000ff";
-        context2.arc(200, 200, 50, 0, 360, 0);
-        context2.closePath();
-        context2.fill();
-
-}
-    </script>
-  </body>
+</body>
 </html>
