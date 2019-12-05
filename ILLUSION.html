@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+      <body onload="draw()">
+      <canvas id="sketch" width="900" height="900">
+      </canvas>
+
+    <script>
+       function draw() {
+        var x = 0;
+        var y = 0;
+
+for (i = 0 ; i < 5 ; i++)
+{
+  for (j = 0 ; j < 7 ; j++)
+{
+    var sketch = document.getElementById('sketch');
+        var context = sketch.getContext("2d");
+
+    context.fillStyle = "#000000";
+
+        context.fillRect(x + 30, y + 30, 25, 25);
+        x += 35;
+
+}
+        x = 0;
+        y += 35
+
+}
+context.rect(15, 15 , 265, 195);
+context.stroke();
+context.stroke();
+context.stroke();
+context.stroke();
+context.stroke();
+context.stroke();
+context.stroke();
+context.stroke();
+context.stroke();
+context.stroke();
+context.stroke();
+context.stroke();
+}
+    </script>
+  </body>
+</html>

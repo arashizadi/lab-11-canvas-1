@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+      <body onload="draw()">
+      <canvas id="sketch" width="900" height="900">
+      </canvas>
+
+    <script>
+       function draw() {
+        var x = 0;
+        var y = 0;
+        var color = 1;
+        var bluePieces = 0;
+        var greenPieces = 0;
+for (i = 0 ; i < 8 ; i++)
+{
+  for (j = 0 ; j < 8 ; j++)
+{
+    var sketch = document.getElementById('sketch');
+    var context = sketch.getContext("2d");
+        
+        if (color % 2 == 0)
+            context.fillStyle = "#000000";
+        else
+            context.fillStyle = "#ffffff";
+
+        context.fillRect(x, y, 24, 24);
+        
+        if(bluePieces < 12 && color % 2 == 0)
+        {
+
+            context.fillStyle = "#0000ff";
+            context.beginPath();
+            context.arc(x+12, y+12, 10, 0, 360, 0);
+            context.closePath();
+            context.fill();
+            bluePieces++;
+            
+        }
+
+        if(greenPieces < 12 && y >= 108 && color % 2 == 0)
+        {
+
+            context.fillStyle = "#00ff00";
+            context.beginPath();
+            context.arc(x+12, y+12, 10, 0, 360, 0);
+            context.closePath();
+            context.fill();
+            greenPieces++;
+            
+        }
+        
+        
+        x += 24;
+        color++;
+}
+        x = 0;
+        y += 24
+        color++;
+}
+}
+    </script>
+  </body>
+</html>

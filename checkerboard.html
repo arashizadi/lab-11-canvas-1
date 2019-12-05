@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+      <body onload="draw()">
+      <canvas id="sketch" width="900" height="900">
+      </canvas>
+
+    <script>
+       function draw() {
+        var x = 0;
+        var y = 0;
+        var color = 1;
+for (i = 0 ; i < 8 ; i++)
+{
+  for (j = 0 ; j < 8 ; j++)
+{
+    var sketch = document.getElementById('sketch');
+        var context = sketch.getContext("2d");
+        if (color % 2 == 0)
+
+            context.fillStyle = "#000000";
+
+else
+    context.fillStyle = "#ffffff";
+
+        context.fillRect(x, y, 25, 25);
+        x += 25;
+        color++;
+}
+        x = 0;
+        y += 25
+        color++;
+}
+}
+    </script>
+  </body>
+</html>

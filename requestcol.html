@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+      <body onload="draw()">
+      <canvas id="sketch" width="300" height="900">
+      </canvas>
+
+    <script>
+    var surprise = 0;
+        while(true)
+        {var userinput = parseInt(prompt("Specify the amount of circles in a column:"));
+        if (userinput < 0 || userinput > 9)
+        {
+        window.alert("oh... and the number that you want to choose should be a positive single digit number or 0... so try again!");
+        surprise++;
+        if(surprise > 5){
+        window.alert("BRAVO!!! You are something else...")}
+        }
+    else
+
+        break;
+
+    }
+if(surprise > 3)
+window.alert("FINALLYYYYYY. HOOOOOORAAAAA!!!! DOODOODOODOOOOO!!!!!");
+        
+        
+      function draw() {
+        var y = 50;
+for (i=0 ; i <= userinput-1 ; i++)
+{
+    var sketch = document.getElementById('sketch');
+        var context = sketch.getContext("2d");
+          context.beginPath();
+          context.fillStyle = "#3399ff";
+        context.arc(50, y, 50, 0, 360, 0);
+        context.closePath();
+        context.fill();   
+
+        y+=100
+}
+
+
+}
+    </script>
+  </body>
+</html>
